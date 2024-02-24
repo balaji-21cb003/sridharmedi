@@ -9,8 +9,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 mongoose.connect("mongodb://localhost:27017/sridharmedi", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+  // useNewUrlParser: true,
+  // useUnifiedTopology: true,
 });
 const db = mongoose.connection;
 

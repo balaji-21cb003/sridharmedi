@@ -1,6 +1,8 @@
 "use client";
 import React, { Fragment, useState } from "react";
 import PopupForm from "@/app/popupform/page";
+// import Image from "next/image";
+// import region from "../../image/region.png";
 
 export default function Navbar() {
   const [showPop, setShowPop] = useState(false);
@@ -41,13 +43,17 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setShowPop(true)}
-              className="transition ease-in-out duration-300 text-white bg-blue-700 hover:bg-blue-800 hover:ease-out focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="transition ease-in-out duration-300 text-white bg-blue-700 hover:bg-blue-800 hover:ease-out focus:outline-none 
+              focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600
+               dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Book a call
             </button>
             <PopupForm isVisible={showPop} onClose={() => setShowPop(false)} />
           </li>
         </ul>
+
+       
       </div>
     </Fragment>
   );
