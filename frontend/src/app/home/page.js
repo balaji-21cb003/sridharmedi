@@ -35,7 +35,7 @@ export default function ProgressSlider() {
             playsInline
             style={{
               width: "100%",
-              height: "500px",
+              height: "655px",
               objectFit: "cover", // Change object-fit to cover
               //   borderRadius: "0.5rem",
             }}
