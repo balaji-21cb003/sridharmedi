@@ -68,8 +68,9 @@ const formSchema = new mongoose.Schema(
     name: String,
     email: String,
     phoneNumber: String,
+
   },
-  { collection: "callrequestform" }
+  { collection: "callrequestform", timestamps:true }
 );
 
 const FormModel = mongoose.model("Form", formSchema);
