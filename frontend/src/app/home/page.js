@@ -1,12 +1,19 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import illustration from "../../../public/illustartion.png";
+import Service from "../components/Service/page";
+import Testimonial from "../components/Testimonial/page";
+import Footer from "../components/Footer/page";
 
 export default function ProgressSlider() {
-  const videos = [
-    { src: "/video1.mp4", desc: "Video 1" },
-    { src: "/video2.mp4", desc: "Video 2" },
-    { src: "/video3.mp4", desc: "Video 3" },
-    { src: "/video4.mp4", desc: "Video 4" },
+  const images = [
+    { src: "/1.jpg", desc: "img 1" },
+    { src: "/3.jpg", desc: "img 3" },
+    { src: "/4.jpg", desc: "img 4" },
+    { src: "/6.jpg", desc: "img 6" },
+    { src: "/7.jpg", desc: "img 7" },
+    { src: "/8.jpg", desc: "img 8" },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,122 +21,85 @@ export default function ProgressSlider() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentSlide((prevSlide) =>
-        prevSlide === videos.length - 1 ? 0 : prevSlide + 1
+        prevSlide === images.length - 1 ? 0 : prevSlide + 1
       );
-    }, 5000); // Change this value to adjust the duration between slides
+    }, 3000); // Change this value to adjust the duration between slides
 
     return () => clearInterval(intervalId);
-  }, [currentSlide, videos.length]); // Include videos.length in the dependency array
+  }, [images.length]);
 
   return (
-    <div className="w-full  mx-auto text-center relative">
-      {/* Videos */}
-      <div className="relative flex flex-col">
-        {videos.map((video, index) => (
-          <video
-            key={index}
-            className={` ${index !== currentSlide ? "hidden" : ""}`}
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{
-              width: "100%",
-              height: "655px",
-              objectFit: "cover", // Change object-fit to cover
-              //   borderRadius: "0.5rem",
-            }}
-          >
-            <source src={video.src} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        ))}
+    <div className="w-full mx-auto text-center relative overflow-hidden">
+      <div className="relative">
+        {/* Images */}
+        <div
+          className="flex transition-transform duration-1000 ease-in-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {images.map((image, index) => (
+            <div
+              key={index}
+              style={{
+                minWidth: "100%",
+                height: "655px",
+                position: "relative",
+              }}
+            >
+              <Image
+                src={image.src}
+                alt={image.desc}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          ))}
+        </div>
+        {/* Navigation Dots */}
+        <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-8 z-10">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              className={`h-3 w-3 rounded-full ${
+                index === currentSlide ? "bg-blue-600" : "bg-gray-300"
+              }`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
+        </div>
       </div>
+
       {/* Description */}
-      <div className="bg-gray-100 p-8 md:p-20 rounded-lg shadow-md flex flex-col items-start transition duration-300 hover:shadow-xl">
-        <h3 className="text-3xl lg:text-5xl font-semibold mb-6 text-gray-700 hover:text-blue-600 hover:underline">
-          Welcome to Sridhar Medi Systems
-        </h3>
-        <p className="text-base lg:text-lg font-medium items-start leading-relaxed text-gray-700 mb-6">
-          Pioneers in Medical Infrastructure. We specialize in state-of-the-art
-          Medical Gas Pipeline Systems (MGPS) and Modular Operation Theatres
-          (MOT), offering end-to-end solutions for hospitals and medical
-          institutions. With expertise honed over years of innovation, we ensure
-          seamless integration and adherence to global standards. Leveraging
-          cutting-edge technology, including Artificial Intelligence (AI), we
-          enhance patient care and safety.
-        </p>
-        <p className="text-base font-medium lg:text-lg text-gray-700">
-          Partner with us to elevate your medical facilities and shape the
-          future of healthcare.
-        </p>
+      <div className="sm:flex items-center max-w-screen-xl mx-auto p-10">
+        <div className="sm:w-1/2 p-10">
+          <div className="image object-center text-center">
+            <Image src={illustration} alt="Illustration" />
+          </div>
+        </div>
+        <div className="sm:w-1/2 p-5">
+          <div className="text">
+            <h2 className="my-4 font-bold text-3xl sm:text-4xl">
+              Welcome to{" "}
+              <span className="text-indigo-600">Sridhar Medi systems</span>
+            </h2>
+            <p className="text-gray-700 text-left leading-relaxed">
+              Pioneers in Medical Infrastructure. We specialize in
+              state-of-the-art Medical Gas Pipeline Systems (MGPS) and Modular
+              Operation Theatres (MOT), offering end-to-end solutions for
+              hospitals and medical institutions. With expertise honed over
+              years of innovation, we ensure seamless integration and adherence
+              to global standards. Leveraging cutting-edge technology, including
+              Artificial Intelligence (AI), we enhance patient care and safety.
+            </p>
+          </div>
+        </div>
       </div>
-      <div className="container mx-auto grid p-20 grid-cols-1 md:grid-cols-3 gap-8">
-        {/* About Us Card */}
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
-          <div className="px-6 py-4">
-            <h2 className="font-bold text-xl mb-2">About Us</h2>
-            <p className="text-gray-700 text-base">
-              Welcome to Sridhar Medi Systems. We specialize in designing,
-              supplying, installing, and maintaining Medical Gas Pipeline
-              Systems (MGPS) and Modular Operation Theatres (MOT) for medical
-              institutions. With years of experience and a commitment to
-              innovation, we ensure seamless integration and adherence to global
-              standards, ultimately enhancing patient care and safety.
-            </p>
-          </div>
-          <div className="px-6 pt-4 pb-2">
-            <a
-              href="#"
-              className="inline-block bg-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 hover:bg-blue-700 transition duration-300"
-            >
-              Learn more
-            </a>
-          </div>
-        </div>
 
-        {/* Services Card */}
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
-          <div className="px-6 py-4">
-            <h2 className="font-bold text-xl mb-2">Services</h2>
-            <p className="text-gray-700 text-base">
-              Our services include comprehensive solutions for MGPS and MOT,
-              maintenance plans, supply of related accessories and equipment, as
-              well as turnkey solutions for hospital infrastructure. We also
-              specialize in implementing Artificial Intelligence (AI)
-              technologies to personalize patient care and optimize operational
-              efficiency.
-            </p>
-          </div>
-          <div className="px-6 pt-4 pb-2">
-            <a
-              href="#"
-              className="inline-block bg-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 hover:bg-blue-700 transition duration-300"
-            >
-              Learn more
-            </a>
-          </div>
-        </div>
+      <Service />
 
-        {/* Contact Card */}
-        <div className="max-w-sm rounded  overflow-hidden shadow-lg">
-          <div className="px-6 py-4">
-            <h2 className="font-bold text-xl mb-2">Contact</h2>
-            <p className="text-gray-700 text-base">
-              Have questions or need assistance? Feel free to get in touch with
-              us. Our team is here to help you with your medical infrastructure
-              needs.
-            </p>
-          </div>
-          <div className="px-6 pt-4 pb-2">
-            <a
-              href="#"
-              className="inline-block bg-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 hover:bg-blue-700 transition duration-300"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
+      <Testimonial />
+
+      <div className="mt-16">
+      <Footer />
       </div>
     </div>
   );

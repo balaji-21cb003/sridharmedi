@@ -1,47 +1,4 @@
-// const express = require("express");
-// const mongoose = require("mongoose");
-// const bodyParser = require("body-parser");
-// const cors= require("cors");
-
-// const app = express();
-
-// app.use(bodyParser.json());
-// app.use(cors());
-
-// mongoose.connect("mongodb://localhost:27017/sridharmedi", {
-//   // useNewUrlParser: true,
-//   // useUnifiedTopology: true,
-// });
-// const db = mongoose.connection;
-
-// const FormSchema = new mongoose.Schema(
-//   {
-//     name: String,
-//     email: String,
-//     phoneNumber: String,
-//   },
-//   { collection: "callrequestform" }
-// );
-
-// const FormModel = mongoose.model("Form", FormSchema);
-
-// app.post("/submit-form", async (req, res) => {
-//   const { name, email, phoneNumber } = req.body;
-
-//   const formData = new FormModel({ name, email, phoneNumber });
-
-//   try {
-//     await formData.save();
-//     res.status(201).json({ message: "Form submitted successfully!" });
-//   } catch (error) {
-//     res.status(500).json({ message: "Error submitting form." });
-//   }
-// });
-
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-require("dotenv").config(); // Load environment variables from .env file
+require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -68,9 +25,11 @@ const formSchema = new mongoose.Schema(
     name: String,
     email: String,
     phoneNumber: String,
-
+    companyName: String, // Add companyName field
+    requirements: String, // Add requirements field
+    timestamp: { type: Date, default: Date.now }, // Add timestamp field
   },
-  { collection: "callrequestform", timestamps:true }
+  { collection: "callrequestform" }
 );
 
 const FormModel = mongoose.model("Form", formSchema);
@@ -85,14 +44,21 @@ const transporter = nodemailer.createTransport({
 });
 
 // Function to send email using Nodemailer
-async function sendEmail(name, email, phoneNumber) {
+async function sendEmail(
+  name,
+  email,
+  phoneNumber,
+  companyName,
+  requirements,
+  timestamp
+) {
   try {
     // Email content
     const mailOptions = {
       from: "doctocare7@gmail.com",
-      to: "balaji07srp@gmail.com, guruguru6631@gmail.com, hemanth.m2021csbs@sece.ac.in",
+      to: "balaji07srp@gmail.com", 
       subject: "New Form Submission",
-      text: `Name: ${name}\nEmail: ${email}\nPhone Number: ${phoneNumber}`,
+      text: `Name: ${name}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nCompany Name: ${companyName}\nRequirements: ${requirements}\nTimestamp: ${timestamp}`,
     };
 
     // Sending email asynchronously
@@ -106,15 +72,28 @@ async function sendEmail(name, email, phoneNumber) {
 
 // POST endpoint for form submission
 app.post("/submit-form", async (req, res) => {
-  const { name, email, phoneNumber } = req.body;
+  const { name, email, phoneNumber, companyName, requirements } = req.body;
 
   try {
     // Save form data to the database
-    const formData = new FormModel({ name, email, phoneNumber });
+    const formData = new FormModel({
+      name,
+      email,
+      phoneNumber,
+      companyName,
+      requirements,
+    });
     await formData.save();
 
     // Send email notification
-    await sendEmail(name, email, phoneNumber);
+    await sendEmail(
+      name,
+      email,
+      phoneNumber,
+      companyName,
+      requirements,
+      formData.timestamp
+    );
 
     console.log("Form submitted successfully");
     res.status(201).json({ message: "Form submitted successfully!" });
