@@ -5,6 +5,7 @@ import illustration from "../../../public/illustartion.png";
 import Service from "../components/Service/page";
 import Testimonial from "../components/Testimonial/page";
 import Footer from "../components/Footer/page";
+import Link from "next/link";
 
 export default function ProgressSlider() {
   const images = [
@@ -27,6 +28,11 @@ export default function ProgressSlider() {
 
     return () => clearInterval(intervalId);
   }, [images.length]);
+
+  const scrollToFooter = () => {
+    const footer = document.getElementById("footer");
+    footer.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="w-full mx-auto text-center relative overflow-hidden">
@@ -99,8 +105,17 @@ export default function ProgressSlider() {
       <Testimonial />
 
       <div className="mt-16">
-      <Footer />
+        <Link href="#footer">
+          <button
+            className="transition ease-in-out duration-300 text-white bg-indigo-900 hover:text-white hover:ease-out focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-blue-800"
+            onClick={scrollToFooter}
+          >
+            Contact Us
+          </button>
+        </Link>
       </div>
+
+      <Footer id="footer" />
     </div>
   );
 }

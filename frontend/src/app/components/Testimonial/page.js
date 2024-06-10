@@ -7,77 +7,77 @@ const testimonials = [
   {
     name: "Dr. Arun Kumar",
     text: "The medical gas products I bought from this store are of excellent quality. They have played a crucial role in ensuring the safety and well-being of our patients. Highly recommended!",
-    image: "https://randomuser.me/api/portraits/men/1.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Deepa Srinivasan",
     text: "As a healthcare professional, I always prioritize quality when it comes to medical supplies. The medical gas products from this store have consistently met my expectations. Great service!",
-    image: "https://randomuser.me/api/portraits/women/2.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Prakash Raj",
     text: "I recently purchased medical gas products from this store, and I'm impressed with the reliability and efficiency of their products. The timely delivery was an added bonus. Will definitely buy again!",
-    image: "https://randomuser.me/api/portraits/men/3.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Nithya Venkatesh",
     text: "The medical gas products I ordered from this store have been instrumental in our healthcare facility. They are of superior quality and have significantly improved our patient care standards.",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Karthik Subramanian",
     text: "I've been purchasing medical gas products from this store for years, and I've never been disappointed. The products are reliable, and the customer service is exceptional. Keep up the good work!",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Priya Murugan",
     text: "I highly recommend this store for anyone in need of quality medical gas products. Their range of products is extensive, and the prices are competitive. A trusted source for healthcare supplies!",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Senthil Kumar",
     text: "The medical gas products from this store have become an essential part of our healthcare operations. The ease of ordering and the prompt delivery make them our go-to supplier for medical supplies.",
-    image: "https://randomuser.me/api/portraits/men/7.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Anjali Sundaram",
     text: "I'm thoroughly impressed with the quality and reliability of the medical gas products I purchased from this store. They have exceeded my expectations in terms of performance and durability.",
-    image: "https://randomuser.me/api/portraits/women/8.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Manoj Krishnan",
     text: "The medical gas products offered by this store are top-notch. They have helped streamline our medical processes and have contributed to the efficient delivery of healthcare services.",
-    image: "https://randomuser.me/api/portraits/men/9.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Deepika Rajan",
     text: "I've been a loyal customer of this store for years, and they have never disappointed me. The medical gas products are of the highest quality, and the customer service is excellent. Highly recommended!",
-    image: "https://randomuser.me/api/portraits/women/10.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Rahul Patel",
     text: "This store has been my go-to supplier for medical gas products for quite some time now. Their reliability and consistency in delivering high-quality products are commendable. A trusted partner in healthcare!",
-    image: "https://randomuser.me/api/portraits/men/11.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Kavitha Raman",
     text: "I recently purchased medical gas products from this store, and I'm extremely satisfied with the experience. The products were delivered promptly, and the quality exceeded my expectations. Will definitely buy again!",
-    image: "https://randomuser.me/api/portraits/women/12.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Aravindan Nair",
     text: "The medical gas products I received from this store have been a game-changer for our healthcare facility. They are of superior quality and have helped enhance the efficiency of our operations. Highly recommended!",
-    image: "https://randomuser.me/api/portraits/men/13.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Priyanka Devi",
     text: "I'm extremely pleased with the medical gas products I purchased from this store. They are of excellent quality and have significantly improved our patient care standards. Thank you for providing such reliable products!",
-    image: "https://randomuser.me/api/portraits/women/14.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
   {
     name: "Dr. Vishal Saxena",
     text: "The medical gas products offered by this store have been indispensable for our healthcare facility. They are of superior quality and have helped streamline our medical processes. A trustworthy supplier!",
-    image: "https://randomuser.me/api/portraits/men/15.jpg",
+    image: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
   },
 ];
 
