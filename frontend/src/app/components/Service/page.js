@@ -76,7 +76,7 @@ export default function Service() {
             </div>
           </div>
 
-          <div className="w-full px-4 md:w-1/2 lg:w-1/3 card">
+          <div className= " mt-10 w-full px-4 md:w-1/2 lg:w-1/3 card">
             <div className="h-full mb-9 rounded-xl py-6 px-7 shadow-md transition-all hover:shadow-lg hover:transition duration-300 sm:p-9 lg:px-6 xl:px-9">
               <div className="mx-auto mb-5 text-3xl text-indigo-600 inline-block icon">
                 <FaHospitalAlt />
@@ -93,7 +93,7 @@ export default function Service() {
             </div>
           </div>
 
-          <div className="w-full px-4 md:w-1/2 lg:w-1/3 card">
+          <div className="mt-10 w-full px-4 md:w-1/2 lg:w-1/3 card">
             <div className="h-full mb-9 rounded-xl py-6 px-7 shadow-md transition-all hover:shadow-lg hover:transition duration-300 sm:p-9 lg:px-6 xl:px-9">
               <div className="mx-auto mb-5 text-3xl text-indigo-600 inline-block icon">
                 <FaCogs />
@@ -110,7 +110,7 @@ export default function Service() {
             </div>
           </div>
 
-          <div className="w-full px-4 md:w-1/2 lg:w-1/3 card">
+          <div className="mt-10 w-full px-4 md:w-1/2 lg:w-1/3 card">
             <div className="h-full mb-9 rounded-xl py-6 px-7 shadow-md transition-all hover:shadow-lg hover:transition duration-300 sm:p-9 lg:px-6 xl:px-9">
               <div className="mx-auto mb-5 text-3xl text-indigo-600 inline-block icon">
                 <FaHandsHelping />

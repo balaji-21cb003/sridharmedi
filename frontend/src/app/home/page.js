@@ -104,16 +104,7 @@ export default function ProgressSlider() {
 
       <Testimonial />
 
-      <div className="mt-16">
-        <Link href="#footer">
-          <button
-            className="transition ease-in-out duration-300 text-white bg-indigo-900 hover:text-white hover:ease-out focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-blue-800"
-            onClick={scrollToFooter}
-          >
-            Contact Us
-          </button>
-        </Link>
-      </div>
+    
 
       <Footer id="footer" />
     </div>
